@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js" defer></script>
+    <script src="https://kit.fontawesome.com/d7df01ffeb.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1 class="header">Live Weather Update</h1>
+    <div class="top-controls">
+        <div class="location-info">
+            <div class="current-location">
+                <div class="location-header">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span id="currentCity">San Francisco, CA</span>
+                </div>
+                <div class="time-date" id="time"></div>
+            </div>
+        </div>
+        <div class="unit-controls">
+            <button class="unit-btn active" data-unit="°C">°C</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="main-card">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name">
+                <button id="searchBtn" onclick="fetchWeatherData()">
+                    <i class="fa-solid fa-search"></i>
+                </button>
+            </div>
+            <div class="weather-details">
+                <div class="left-section">
+                    <div class="climate-icon">
+                        <img id="weatherIcon" src="">
+                    </div>
+                    <div class="weather-info">
+                        <div class="climate-text" id="climate">Partly Cloudy</div>
+                        <div class="precipitation">Precipitation 20%</div>
+                    </div>
+                </div>
+                <div class="center-section">
+                    <div class="temp-main">
+                        <h1 id="temp">72°</h1>
+                        <h3 id="feelsLike">RealFeel 68°</h3>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <div class="extra-stats">
+                        <div class="stat-item">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span id="humidity">Humidity: --%</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fa-solid fa-wind"></i>
+                            <span id="wind">Wind: -- m/s</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fa-solid fa-gauge"></i>
+                            <span id="pressure">Pressure: -- mb</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="four-day-forecast">
+            <div class="forecast-header">
+                <h3>4-Day Forecast</h3>
+                <a href="#" class="detailed-view">Detailed View</a>
+            </div>
+            <div class="forecast-grid" id="forecastGrid">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
